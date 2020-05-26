@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Webkit;
 using Android.Net.Http;
+using Android.Content;
 
 namespace WebViewTestApp
 {
@@ -32,6 +33,8 @@ namespace WebViewTestApp
             web_view.Settings.AllowFileAccess = true;
             web_view.SetWebViewClient(new TestWebViewClient());
             web_view.SetWebChromeClient(new RbWebChromeClient(this));
+            //--- PDF testing
+            web_view.SetDownloadListener(new RbDownloadListener(this));
             web_view.LoadUrl("https://www.rambase.net/Default.aspx?mobileapp=true#/mobileapp");
         }
 
@@ -83,6 +86,38 @@ namespace WebViewTestApp
         {
             base.OnProgressChanged(view, newProgress);
         }
+    }
+
+     class RbDownloadListener : Java.Lang.Object, IDownloadListener
+    {
+        Context cont;
+        public RbDownloadListener(Context context)
+        {
+            cont = context;
+        }
+
+        public void OnDownloadStart(string url, string userAgent, string contentDisposition, string mimetype, long contentLength)
+        {
+               DownloadManager.Request request = new DownloadManager.Request(
+                   Android.Net.Uri.Parse(url));
+            request.SetMimeType(mimetype);
+            String cookies = CookieManager.Instance.GetCookie(url);
+            request.AddRequestHeader("cookie", cookies);
+            request.AddRequestHeader("Accept-Encoding", "gzip, deflate, br");
+            request.AddRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            request.AllowScanningByMediaScanner();
+            request.SetAllowedOverRoaming(false);
+            request.SetNotificationVisibility(DownloadVisibility.VisibleNotifyCompleted);
+            request.SetDestinationInExternalPublicDir(Android.OS.Environment.DirectoryDownloads, URLUtil.GuessFileName(url, contentDisposition, mimetype));
+            var manager = (DownloadManager)cont.GetSystemService(Android.Content.Context.DownloadService);
+            manager.Enqueue(request);
+
+        }
+
+
+
+
     }
 }
 

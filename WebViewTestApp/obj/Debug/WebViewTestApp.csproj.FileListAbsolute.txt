@@ -262,3 +262,5 @@
 /Users/hatteland/Projects/WebViewTestApp/WebViewTestApp/obj/Debug/stamp/_GeneratePackageManagerJava.stamp
 /Users/hatteland/Projects/WebViewTestApp/WebViewTestApp/obj/Debug/stamp/_ResolveLibraryProjectImports.stamp
 /Users/hatteland/Projects/WebViewTestApp/WebViewTestApp/obj/Debug/android/src/crc64935e8a132b24a1e5/RbWebChromeClient.java
+/Users/hatteland/Projects/WebViewTestApp/WebViewTestApp/obj/Debug/WebViewTestApp.csprojAssemblyReference.cache
+/Users/hatteland/Projects/WebViewTestApp/WebViewTestApp/obj/Debug/android/src/crc64935e8a132b24a1e5/RbDownloadListener.java
