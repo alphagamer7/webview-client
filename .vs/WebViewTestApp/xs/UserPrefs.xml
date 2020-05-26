@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{41B4F7DA-217C-419E-8A32-67490053E948}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebViewTestApp/Resources/Resource.designer.cs">
+    <Files>
+      <File FileName="WebViewTestApp/Properties/AndroidManifest.xml" />
+      <File FileName="WebViewTestApp/MainActivity.cs" />
+      <File FileName="WebViewTestApp/Resources/layout/content_main.xml" />
+      <File FileName="WebViewTestApp/Resources/layout/main.axml" />
+      <File FileName="WebViewTestApp/Resources/Resource.designer.cs" Line="3892" Column="24" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WebViewTestApp AndroidDesignerPreferredTheme="AppTheme" AndroidDesignerPreferredDevice="Nexus 4" FirstBuild="True" PreferredExecutionTarget="Android.Pixel_2_API_29" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
